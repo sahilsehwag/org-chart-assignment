@@ -1,54 +1,63 @@
-# React + TypeScript + Vite
+# OrgChart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Summary
 
-Currently, two official plugins are available:
+OrgChart lets you view and manage an employee hierarchy with an interactive drag-and-drop org chart. You can reassign managers by dragging employees, use a sidebar to view, focus, and filter employees by team or search.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Netlify
 
-## Expanding the ESLint configuration
+https://roaring-semolina-13c192.netlify.app/
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Installation
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. **Clone the repository:**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+   ```bash
+   git clone https://github.com/sahilsehwag/org-chart-assignment.git
+   cd org-chart-assignment
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. **Install dependencies:**
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Run tests (optional):**
+
+   ```bash
+   npm run test
+   ```
+
+5. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+## Tech Stack
+
+This project uses a modern web stack and several supporting libraries:
+
+- **React**, **TypeScript**, **Vite**: Set up project with Vite and React + TypeScript
+- **Tailwind CSS**: Added Tailwind CSS and configured styling
+- **shadcn/ui**, **Radix UI**, **class-variance-authority (cva)**: Integrated shadcn/ui and Radix UI components
+- **react-flow**, **d3-hierarchy**: Implemented Org Chart with react-flow and d3-hierarchy
+- **react-query**: Used react-query for data fetching/caching
+- **sonner**: Added toast notifications with sonner
+- **Vitest**, **react-testing-library**: Wrote unit/component tests with Vitest and react-testing-library
+- **miragejs**: Mocked API with miragejs for local development/testing
+- **lucide-react**: Added icons with lucide-react
+- **ESLint**: Set up ESLint for code linting
+- **Netlify**: Deployed to Netlify
+- **CI workflow**: Configured CI workflow (lint, test, build)
+
+**Other details:**
+
+- Node.js 18+ is required for development and running scripts.
+- See `package.json` for the full list of dependencies and devDependencies.
