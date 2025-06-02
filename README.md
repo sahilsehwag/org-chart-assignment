@@ -4,6 +4,10 @@
 
 OrgChart lets you view and manage an employee hierarchy with an interactive drag-and-drop org chart. You can reassign managers by dragging employees, use a sidebar to view, focus, and filter employees by team or search.
 
+### Demo
+
+[Demo Video](https://youtu.be/xqJJNcxRf4Y)
+
 ### Netlify
 
 https://roaring-semolina-13c192.netlify.app/
