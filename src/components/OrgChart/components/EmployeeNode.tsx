@@ -6,7 +6,6 @@ import type { NodeProps } from "@xyflow/react";
 import type { Employee } from "~/types";
 import type { HierarchyNode } from "d3-hierarchy";
 import type { UpdateManagerParams } from "~/server";
-import { ERROR_MESSAGES } from "../constants";
 import { canDrop, getAllChildrenIds } from "../helpers";
 
 type Data = {

@@ -2,14 +2,14 @@ import "@testing-library/jest-dom";
 
 if (typeof DataTransfer === "undefined") {
 	class MockDataTransfer {
-		data: Record<string, any> = {};
+		data: Record<string, unknown> = {};
 		effectAllowed: string = "";
 
 		constructor() {
 			this.data = {};
 		}
 
-		setData(key: string, value: any) {
+		setData(key: string, value: unknown) {
 			this.data[key] = value;
 		}
 
@@ -17,7 +17,7 @@ if (typeof DataTransfer === "undefined") {
 			return this.data[key] || "";
 		}
 	}
-	// @ts-ignore
+	// @ts-expect-error - DataTransfer is not typed
 	global.DataTransfer = MockDataTransfer;
 }
 
@@ -30,6 +30,6 @@ if (typeof DragEvent === "undefined") {
 			this.dataTransfer = eventInitDict?.dataTransfer || new DataTransfer();
 		}
 	}
-	// @ts-ignore
+	// @ts-expect-error - DragEvent is not typed
 	global.DragEvent = MockDragEvent;
 }

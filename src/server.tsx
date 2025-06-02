@@ -117,14 +117,14 @@ export const runServer = () => {
 
 			this.get("/employees", () => employees);
 			this.put("/employees/:id", (_, request): AnyResponse => {
-				let id = request.params.id;
-				let attrs = JSON.parse(request.requestBody);
-				let emp = employees.find((e) => e.id === id);
+				const id = request.params.id;
+				const attrs = JSON.parse(request.requestBody);
+				const emp = employees.find((e) => e.id === id);
 				if (emp) {
 					emp.manager = attrs.manager;
 					emp.team = attrs.team;
 					for (const id of attrs.ids) {
-						let emp = employees.find((e) => e.id === id);
+						const emp = employees.find((e) => e.id === id);
 						if (emp) {
 							emp.team = attrs.team;
 						}

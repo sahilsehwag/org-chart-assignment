@@ -39,13 +39,13 @@ export default function EmployeeChart({
 	useEffect(() => {
 		setEdges(initialEdges);
 		setNodes(initialNodes);
-	}, [initialEdges, initialNodes]);
+	}, [initialEdges, initialNodes, setEdges, setNodes]);
 
 	const { fitView } = useReactFlow();
 
 	useEffect(() => {
 		fitView({ duration: 500, maxZoom: 0.75 });
-	}, [employees]);
+	}, [employees, fitView]);
 
 	return (
 		<div className="w-full overflow-auto bg-gray-50">

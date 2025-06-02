@@ -29,7 +29,15 @@ vi.mock("@xyflow/react", () => ({
 			return null;
 		}),
 	}),
-	Handle: ({ type, position, children }: any) => (
+	Handle: ({
+		type,
+		position,
+		children,
+	}: {
+		type: string;
+		position: string;
+		children: React.ReactNode;
+	}) => (
 		<div data-testid={`handle-${type}`} data-position={position}>
 			{children}
 		</div>
@@ -68,7 +76,7 @@ describe("EmployeeNode", () => {
 	});
 
 	it("renders employee information correctly", () => {
-		// @ts-ignore
+		// @ts-expect-error - defaultProps is not typed
 		render(<EmployeeNode {...defaultProps} />);
 
 		expect(screen.getByText("Employee 1")).toBeInTheDocument();
