@@ -10,7 +10,7 @@ OrgChart lets you view and manage an employee hierarchy with an interactive drag
 
 ### Netlify
 
-https://roaring-semolina-13c192.netlify.app/
+[Deployment link](https://org-chart-by-sahilsehwag.netlify.app/)
 
 ### Installation
 
